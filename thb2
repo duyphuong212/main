@@ -1,0 +1,86 @@
+# main
+package thb2;
+
+public class main {
+ 
+    static Scanner sc = new Scanner(System.in);
+    static void nhapTK(Account a) {
+        Account tk = new Account();
+    	System.out.println("nhap so tk ");
+        tk.setSotk();
+        System.out.println("nhap ten tk ");
+        tk.setTentk();
+
+    }
+    public static void main(String[] args) {
+    	Account tk = new Account();
+        Account a[] = null;
+        int k, b, n = 0;
+        long s, d, c, f;
+        boolean flag = true;
+        do {
+            System.out.println("lua chon ");
+            System.out.println("1.nhap thong tin\n"
+                     + "3.nap tien\n" + "4.rut tien\n"
+                    + "5.dao han\n"  + "thoat");
+            b = sc.nextInt();
+            switch (b) {
+                case 1:
+                    System.out.println("so luong kh ");
+                    n = sc.nextInt();
+                    a = new Account[n];
+                    for (int i = 0; i < n; i++) {
+                        System.out.println("khach thu " + (i+1));
+                        a[i] = new Account();
+                       tk.nhaptk();
+                    }
+                    break;
+
+                   
+                case 3:
+                    System.out.println("nhap so tk: ");
+                    s = sc.nextLong();
+                    for (int i = 0; i < n; i++) {
+                        d = a[i].getSotk();
+                        if (s == d) {
+                            
+                            a[i].naptien();
+                        } else {
+                            System.out.println("");
+                        }
+                    }
+                    break;
+                case 4:
+                    System.out.println("nhap so tk: ");
+                    s = sc.nextLong();
+                    for (int i = 0; i < n; i++) {
+                        d = a[i].getSotk();
+                        if (s == d) {
+                            
+                            a[i].ruttien();;
+                        }
+                    }
+                    break;
+                case 5:
+                    System.out.println("nhap so tk: ");
+                    s = sc.nextLong();
+                    for (int i = 0; i < n; i++) {
+                        d = a[i].getSotk();
+                        if (s == d) {
+                            
+                            a[i].daohan();;
+                        } else {
+                            System.out.println("");
+                        }
+                    }
+                    break;
+               
+                   
+                default:
+                    System.out.println("Bye!!");
+                    flag = false;
+                    break;
+            }
+        } while (flag);
+    }
+}
